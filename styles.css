@@ -1,0 +1,83 @@
+a.nixie {
+    text-decoration: none;
+    color: #ff9100;
+    font-family: "Exo 2", Helvetica, Arial, sans-serif;
+    font-size: 90px;
+    letter-spacing: 0px;
+}
+
+.avatar {
+    background-image: url('https://www.gravatar.com/avatar/2d7e0bfe654f2d1c07ffa5474087a19e?s=150');
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: top center;
+    border-radius: 50%;
+}
+
+.header {
+  position:relative;
+  text-align:center;
+  background: #3aafa9;
+  color:#F5F5F5;
+  background-image: url('bg.png');
+  box-shadow: inset 0px -50px 20px -1px #3aafa9;
+}
+
+.footer {
+    position:relative;
+    text-align:center;
+    color:#17251a;
+    font-size: 11px;
+    padding: 3px;
+  }
+
+.inner-header {
+  height:33vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex { /*Flexbox for containers*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* FontAwesome */
+.fa {
+    margin: 10px;
+    padding: 10px;
+    width: 60px;
+    font-size: 40px !important;
+    text-align: center;
+    text-decoration: none;
+}
+.fa:hover {
+    animation: push 0.3s linear 1;
+}
+@keyframes push{
+    50%  {transform: scale(0.8);}
+}
+.fa-linkedin {
+    background: #2867B2;
+    color: #F5F5F5;
+}
+.fa-github {
+    background: #24292e;
+    color: #F5F5F5;
+}
+.fa-instagram {
+    background: #E1306C;
+    color: #F5F5F5;
+}
+.fa-facebook {
+    background: #4267B2;
+    color: #F5F5F5;
+}
+.fa-pinterest {
+    background: #BD081C;
+    color: #F5F5F5;
+}
