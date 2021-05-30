@@ -28,7 +28,7 @@ a.nixie {
     position:relative;
     text-align:center;
     color:#17251a;
-    font-size: 11px;
+    font-size: 12px;
     padding: 3px;
   }
 
@@ -49,7 +49,7 @@ a.nixie {
 .left {
   display: inline-block;
   width: 48%;
-  padding: 10px 10px 10px 20px;
+  padding: 15px 10px 10px 25px;
   line-height: 1.7em;
   vertical-align: middle;
 }
@@ -57,7 +57,7 @@ a.nixie {
 .right {
   display: inline-block;
   width: 48%;
-  padding: 10px;
+  padding: 10px 0px 10px 10px;
   line-height: 1.7em;
   vertical-align: middle;
 }
