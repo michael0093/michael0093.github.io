@@ -124,6 +124,11 @@ section, article, .section, .article, .paper {
     margin-right: auto;
     margin-bottom: 10vh;
 }
+@media only screen and (max-width: 1025px) {
+    section, article, .section, .article, .paper {
+        max-width: 85vw;
+    }
+  }
 
 hr {
     width: 66%;

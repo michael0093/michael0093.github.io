@@ -53,6 +53,12 @@ a.nixie {
   line-height: 1.7em;
   vertical-align: middle;
 }
+@media only screen and (max-width: 768px) {
+  .left {
+    width: 100%;
+    padding: 0px 10px 10px 10px;
+  }
+}
 
 .right {
   display: inline-block;
@@ -60,6 +66,12 @@ a.nixie {
   padding: 10px 0px 10px 10px;
   line-height: 1.7em;
   vertical-align: middle;
+}
+@media only screen and (max-width: 768px) {
+  .right {
+    width: 100%;
+    padding: 0px 10px 10px 10px;
+  }
 }
 
 .center{
