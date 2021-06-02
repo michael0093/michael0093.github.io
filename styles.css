@@ -14,6 +14,11 @@ a.nixie {
     background-position: top center;
     border-radius: 50%;
 }
+@media only screen and (max-width: 768px) {
+  .avatar {
+    display: none;
+  }
+}
 
 .header {
   position:relative;
@@ -70,15 +75,15 @@ a.nixie {
 @media only screen and (max-width: 768px) {
   .right {
     width: 100%;
-    padding: 0px 10px 10px 10px;
+    padding: 0px 10px 0px 10px;
   }
 }
 
 .center{
   text-align: center;
 }
-.justify{
-  text-align: justify;
+.cardBody{
+  text-align: center;
 }
 
 /* FontAwesome */
