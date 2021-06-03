@@ -27,22 +27,23 @@
  
     <div class="paper with-shadow center">
         <main class="grid">
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
-        <div><img src="caps/cap.jpg">Photo Caption</div>
+        <!-- Modal Image on gallery click. Alt text is the full-length caption -->
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption 123">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption aaa">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption bbb">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption 123">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption aaa">Photo Caption</div>
+
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption bbb">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption 123">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption aaa">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption bbb">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption 123">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption aaa">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption bbb">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption 123">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption aaa">Photo Caption</div>
+        <div><img class="ImgThumbnail" src="caps/cap.jpg" alt="Test caption bbb">Photo Caption</div>
       </main>
     </div>
 
@@ -51,4 +52,33 @@
         &copy; 2021 Michael Carpenter, All rights reserved
     </div>
 </body>
+
+  <!-- Modal Image on gallery click -->
+  <div class="modal">
+    <span class="close">×</span>
+    <img class="modalImage" id="img01" />
+    <div class="modalCaption" id="caption"></div>
+  </div>
+
 </html>
+
+<script>
+
+// Modal Image on gallery click
+  var modalEle = document.querySelector(".modal");
+  var modalImage = document.querySelector(".modalImage");
+  var captionText = document.querySelector(".modalCaption");
+
+  Array.from(document.querySelectorAll(".ImgThumbnail")).forEach(item => {
+    item.addEventListener("click", event => {
+        modalEle.style.display = "block";
+        modalImage.src = event.target.src;
+        captionText.innerHTML = event.target.alt;
+    });
+  });
+
+  document.querySelector(".close").addEventListener("click", () => {
+    modalEle.style.display = "none";
+  });
+
+</script>
