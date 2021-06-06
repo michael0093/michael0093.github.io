@@ -214,7 +214,8 @@
   <!-- Modal Image on gallery click -->
   <div class="modal">
     <span class="close">×</span>
-    <img class="modalImage" id="img01" />
+    <img class="modalImage mi1" id="img01" />
+    <img class="modalImage mi2" id="img02" onerror="this.onerror=null; this.style='display:none;'"/>
     <div class="modalCaption" id="caption"></div>
   </div>
 
@@ -224,7 +225,8 @@
 
 // Modal Image on gallery click
   var modalEle = document.querySelector(".modal");
-  var modalImage = document.querySelector(".modalImage");
+  var modalImage = document.querySelector(".mi1");
+  var modalImage2 = document.querySelector(".mi2");
   var captionText = document.querySelector(".modalCaption");
 
   Array.from(document.querySelectorAll(".ImgThumbnail")).forEach(item => {
@@ -232,6 +234,10 @@
         modalEle.style.display = "block";
         modalImage.src = event.target.src;
         captionText.innerHTML = event.target.alt;
+
+        // If there are more images with the same name, show them. Otherwise the onerror in the HTML hides the placeholders
+        // Sorry, only .jpg is assumed for the additional images
+        modalImage2.src = event.target.src.replace(/\.[^/.]+$/, "") + "_2.jpg";
     });
   });
 
