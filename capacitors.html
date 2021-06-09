@@ -34,7 +34,7 @@
       <a name="A"></a>
       <h4 class="capHeader">A</h4>
       <div class="grid">
-        <div><img class="ImgThumbnail" src="caps/aae.jpg" alt="AAE (Australasian Engineering Equipment) sold to Rifa then Kemet (https://www.radiomuseum.org/dsp_hersteller_detail.cfm?company_id=20334) - Made in Australia 1974!">AAE</div>
+        <div><img class="ImgThumbnail" src="caps/aae.jpg" alt="AEE (Australasian Engineering Equipment) sold to Rifa then Kemet (https://www.radiomuseum.org/dsp_hersteller_detail.cfm?company_id=20334) - Made in Australia 1974!">AAE</div>
         <div><img class="ImgThumbnail" src="caps/a.jpg" alt="A (?)">A (?)</div>
         <div><img class="ImgThumbnail" src="caps/aishi.jpg" alt="Aishi">Aishi</div>
       </div>
@@ -264,11 +264,11 @@
     <span class="close">×</span>
     <img class="modalImage mi1" id="img01" />
     <div class="modalCaption" id="caption"></div>
-    <img class="modalImage mi2" id="img02" onerror="this.onerror=null; this.style='display:none;'"/>
+    <img class="modalImage mi2" id="img02" onerror="this.style='display:none;'"/>
     <br>
-    <img class="modalImage mi3" id="img03" onerror="this.onerror=null; this.style='display:none;'"/>
+    <img class="modalImage mi3" id="img03" onerror="this.style='display:none;'"/>
     <br>
-    <img class="modalImage mi4" id="img04" onerror="this.onerror=null; this.style='display:none;'"/>
+    <img class="modalImage mi4" id="img04" onerror="this.style='display:none;'"/>
   </div>
 
 </html>
@@ -288,6 +288,10 @@
         modalEle.style.display = "block";
         modalImage.src = event.target.src;
         captionText.innerHTML = event.target.alt;
+
+        modalImage2.style.display = "block";  // Reset the visibility of the extra images
+        modalImage3.style.display = "block";
+        modalImage4.style.display = "block";
 
         // If there are more images with the same name, show them. Otherwise the onerror in the HTML hides the placeholders
         // Sorry, only .jpg is assumed for the additional images
