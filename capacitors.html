@@ -26,6 +26,7 @@
            If you have information about a particular capacitor or want to donate something not shown here, please use the contact form at the bottom of <a href="https://nixlabs.com.au">nixlabs.com.au</a>. Generally only electronics-type through-hole electrolytic capacitors are collected unless it is particularly unusual or interesting.<br>
            Many thanks to <a href="http://capacitor.web.fc2.com/">capacitor.web.fc2.com</a> as an invaluable resource for deciphering some of the markings.
         </p>
+        <p id="statStr"></p>
         <br>
         <div style="font-weight:bold">
           <a href="#A">A</a> | <a href="#B">B</a> | <a href="#C">C</a> | <a href="#D">D</a> | <a href="#E">E</a> | <a href="#F">F</a> | <a href="#G">G</a> | <a href="#H">H</a> | <a href="#I">I</a> | <a href="#J">J</a> | <a href="#K">K</a> | <a href="#L">L</a> | <a href="#M">M</a> | <a href="#N">N</a> | <a href="#O">O</a> | <a href="#P">P</a> | <a href="#Q">Q</a> | <a href="#R">R</a> | <a href="#S">S</a> | <a href="#T">T</a> | <a href="#U">U</a> | <a href="#V">V</a> | <a href="#W">W</a> | <a href="#X">X</a> | <a href="#Y">Y</a> | <a href="#Z">Z</a> | <a href="#Unknown">Unknown</a>
@@ -389,7 +390,32 @@
     }
   });
 
-  // Get total image counts
- // var Acnt = document.getElementsByName("imgA").length
+  // Get total image counts by letter
+  const alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+  var counts     = [];
+  var total      = 0;
+  var mostVal    = 0
+  var most;
+  var leastVal   = 9999;
+  var least;
+
+  for (let i=0; i<alphabet.length; i++){
+    counts[i] = document.getElementsByName("img" + alphabet[i]).length
+    total += counts[i];
+
+    if(counts[i] > mostVal){  // New maximum, update most frequency letter
+      most = i;
+      mostVal = counts[i];
+    }
+    if(counts[i] < leastVal){  // New minimum, update least frequency letter
+      least = i;
+      leastVal = counts[i];
+    }
+  }
+  
+  total += document.getElementsByName("imgUn").length;  // Unknown symbols are included in total count but not min/max stats
+
+  let str = "Most common: " + alphabet[most] + ", Least common: " + alphabet[least] + ", Total: " + total;
+  document.getElementById("statStr").innerHTML = str;
 
 </script>
